@@ -10,16 +10,30 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите пятизначное число");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Александр Блок");
 
-            var n = int.Parse(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Ночь, улица, фонарь, аптека...");
 
-            var pat = n % 10;
-            var tri = (n % 1000) / 100;
-            var odin = (n % 100000) / 10000;
+            Console.WriteLine();
 
-            string result = string.Format("{0}{1}{2}",odin,pat, tri);
-            Console.WriteLine("Ваше число:" +result);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Ночь, улица, фонарь, аптека,");
+            Console.WriteLine("Бессмысленный и тусклый свет.");
+            Console.WriteLine("Живи еще хоть четверть века —");
+            Console.WriteLine("Всё будет так. Исхода нет.");
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Умрёшь — начнёшь опять сначала");
+            Console.WriteLine("И повторится всё, как встарь:");
+            Console.WriteLine("Ночь, ледяная рябь канала,");
+            Console.WriteLine("Аптека, улица, фонарь.");
+
+            Console.ResetColor();
+        }
         }
     }
-}
+
