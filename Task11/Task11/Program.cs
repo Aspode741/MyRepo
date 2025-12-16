@@ -27,14 +27,14 @@ namespace Task11_1
             Array.Copy(massiv, kopia, massiv.Length);
 
             DelimNaSummu(kopia);
-            Console.WriteLine("\nМассив после деления на сумму элементов:");
+            Console.WriteLine("Массив после деления на сумму элементов:");
             PrintDoubleArray(kopia);
 
             var summaProizvedeniy = VychislitSummuProizvedeniy(massiv);
-            Console.WriteLine($"\nСумма произведений элемента на индекс: {summaProizvedeniy:F4}");
+            Console.WriteLine($"Сумма произведений элемента на индекс: {summaProizvedeniy:F4}");
 
             var usrednennyeSummy = VychislitUsrednennyeSummyKvadratov(massiv);
-            Console.WriteLine("\nУсреднённые частичные суммы квадратов:");
+            Console.WriteLine("Усреднённые частичные суммы квадратов:");
             PrintDoubleArray(usrednennyeSummy);
         }
 
