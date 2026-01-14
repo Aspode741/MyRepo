@@ -1,27 +1,63 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
-namespace Task9_1
+namespace Examen
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите значение аргумента");
+            long k = 0;
+            long limit = 100000000;
 
-            var x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Подсчёт реверсивных чисел от 10 до 100 000 000 (не включительно)");
 
-            Console.WriteLine($"f({x:F2})={F(x):F2}");
+            for (long n = 10; n < limit; n++)
+            {
+                if (n % 10 == 0)
+                {
+                    continue;
+                }
+                ;
+
+                if (ProverkaChotneChot(n))
+                {
+                    k++;
+                }
+            }
+
+
+            Console.WriteLine($"Всего реверсивных чисел меньше 100000000 и больше 9: {k}");
         }
 
-        static double F(double x)
+        static bool ProverkaChotneChot(long n)
         {
-            if (x < -5) return 25-x*x;
-            else if (x <= 5) return x*x-25;
-            else return Math.Sqrt(x-5);
+            long summa = n + PovorotN(n);
+
+            if (summa % 2 == 0) return false;
+
+            long vremennoe = summa;
+            while (vremennoe > 0)
+            {
+                if ((vremennoe % 10) % 2 == 0) return false;
+                vremennoe /= 10;
+            }
+
+            return true;
+        }
+
+        static long PovorotN(long n)
+        {
+            long obratnoe = 0;
+            long vremennoe = n;
+
+            while (vremennoe > 0)
+            {
+                obratnoe = obratnoe * 10 + (vremennoe % 10);
+                vremennoe /= 10;
+            }
+
+            return obratnoe;
         }
     }
 }
